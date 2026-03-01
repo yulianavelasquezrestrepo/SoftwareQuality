@@ -16,7 +16,7 @@ https://app.com/user/123/profile
 
 Si el usuario cambia el 123 por 124 y puede ver otro perfil → Vulnerabilidad.
 
-## Cómo probarlo (QA paso a paso)
+## Cómo probarlo
 1. Crear dos usuarios.
 2. Iniciar sesión con el Usuario A.
 3. Intentar acceder al ID del Usuario B.
