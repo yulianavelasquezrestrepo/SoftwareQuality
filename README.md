@@ -1,5 +1,3 @@
-# Software Quality
-
 # OWASP Top 10 – Seguridad en Aplicaciones Web
 ## Clase: Calidad y Pruebas del Software
 
