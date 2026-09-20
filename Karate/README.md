@@ -68,29 +68,25 @@ Configura Karate siguiendo las opciones de instalación y ejecución de la [docu
 Dentro de tu proyecto de pruebas Karate, crea un archivo llamado `consulta.feature` con este contenido:
 
 ```gherkin
-Feature: Consulta de parámetros con Postman Echo
+Feature: Users API
 
-  Background:
-    * url 'https://postman-echo.com'
+  Scenario: Obtener un usuario
 
-  Scenario: El servicio devuelve el nombre enviado
-    Given path 'get'
-    And param nombre = 'Ana'
-    When method get
+    Given url 'https://jsonplaceholder.typicode.com'
+    And path 'users/1'
+    When method GET
     Then status 200
-    And match response.args.nombre == 'Ana'
 ```
 
 ### 3. Ejecutar e interpretar
 
 Ejecuta `consulta.feature` con el ejecutor configurado en tu proyecto Karate, como la integración del editor, la línea de comandos o JUnit. La prueba requiere conexión a Internet y que el servicio esté disponible.
 
-El escenario envía `GET https://postman-echo.com/get?nombre=Ana` y verifica dos condiciones:
+El escenario envía `GET https://jsonplaceholder.typicode.com` y verifica la condición:
 
 1. El servidor responde con el código `200`.
-2. El campo `args.nombre` del JSON contiene `Ana`.
 
-Si alguna comprobación falla, el escenario se marca como fallido. Para observarlo, cambia únicamente el valor esperado de la última línea por `Luis` y vuelve a ejecutar la prueba.
+Si la comprobación falla, el escenario se marca como fallido. Para observarlo, cambia únicamente el valor esperado de la última línea por `404` y vuelve a ejecutar la prueba.
 
 ## Buenas prácticas
 
